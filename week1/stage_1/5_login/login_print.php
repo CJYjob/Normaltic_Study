@@ -1,6 +1,6 @@
 <!-- form 태그로 사용자 입력을 받아, GET 방식으로 전달 및 출력하기 -->
 
-<form method="GET" action="login_proc.php">  <!-- action 속성으로 입력받은 데이터를 전달받아 처리할 페이지 지정 -->
+<form method="GET" action="login_print.php">  <!-- action 속성으로 입력받은 데이터를 전달받아 처리할 페이지 지정 -->
   <input type="text" name="id" placeholder="User ID"/>
   <input type="password" name="pass" placeholder="User Password"/>
   <input type="submit" value="login"/>
