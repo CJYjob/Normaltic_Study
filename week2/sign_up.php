@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up</title>
 </head>
 <body>
 
@@ -44,6 +44,8 @@
             
             // 정보 삽입용 SQL Query 작성
             $sql = 'INSERT INTO `week2` VALUES (\''.$id.'\', \''.$pw.'\', \''.$name.'\', \''.$phone_no.'\')';
+            
+            // Query 실행
             $result = mysqli_query($db_conn, $sql);
 
             // 회원 가입 결과 문구 출력 및 Redirection
@@ -57,6 +59,9 @@
                 echo "<script>history.back();</script>";
             }
         }
+        
+        // DB 연결 해제
+        mysqli_close($db_conn);
 
     ?>
     
