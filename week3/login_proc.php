@@ -35,6 +35,7 @@
             if(isset($userLI)) {
 
                 // 전달된 값 중, NULL 값이 있는지 확인
+                // 있다면, 뒤로가기로 페이지 이동동
                 if (empty($userID) || empty($userPW)) {
                     echo "<script>
                         alert('모든 입력값을 채워주세요.');
@@ -60,26 +61,29 @@
                 
             }
 
-            // // 관리자인 경우 Session에 Login ID와 Role을 저장하고 / session_admin.php로 Redirection 한다.
-            // if ($login_flag === 'admin'){        
-            //     $_SESSION['id'] = $userID;
-            //     $_SESSION['role'] = 'admin'; 
-            //     header('Location: session_admin.php');
-            //     exit;
-            // // 사용자인 경우 Session에 Login ID와 Role을 저장하고 / session_index.php로 Redirection 한다.
-            // } else if ($login_flag === 'member') {
-            //     $_SESSION['id'] = $userID;
-            //     $_SESSION['role'] = 'member'; 
-            //     header('Location: session_index.php');
-            //     exit;
-            // // 비회원인 경우 login page로 Redirection
-            // } else {
-            //     header("Location: session_login.php");
-            //     exit;
-            // }
+            // 관리자인 경우 Session에 Login ID와 Role을 저장하고 / session_admin.php로 Redirection 한다.
+            if ($login_flag === 'admin'){        
+                $_SESSION['id'] = $userID;
+                $_SESSION['role'] = 'admin'; 
+                header('Location: admin.php');
+                exit;
+
+            // 사용자인 경우 Session에 Login ID와 Role을 저장하고 / session_index.php로 Redirection 한다.
+            } else if ($login_flag === 'member') {
+                $_SESSION['id'] = $userID;
+                $_SESSION['role'] = 'member'; 
+                header('Location: index.php');
+                exit;
+
+            // 비회원인 경우 login page로 Redirection
+            } else {
+                header("Location: login.php");
+                exit;
+            }
+            
         } else {
             // POST 메서드를 사용하지 않으면, 잘못된 접근이므로, login 페이지로 Redirection 한다.
-            header("Location: session_login.php");
+            header("Location: login.php");
             exit;
         }
         ?>

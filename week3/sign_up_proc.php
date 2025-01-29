@@ -23,12 +23,6 @@
 
         <?php
 
-// session 설정
-require_once 'set_session.php';
-
-// Session 시작
-session_start();
-
 $userID = $_POST['id'];
 $userPW = password_hash($_POST['pw'], PASSWORD_DEFAULT);
 $userNM = $_POST['name'];
@@ -45,16 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         header("Location: login.php");
         exit;
-
-        // // 사용자 함수 삽입. 
-        // require_once('login_func.php');
-
-        // // 입력한 id와 pw로 로그인 여부 판단. by 호출된 PHP 파일의 사용자 함수
-        //     // pw는 함수 내부에서 Hash 처리되어 사용됨.
-        //     // 로그인 여부를 로그인 시도자의 Role 문자열로 반환 받음.('admin', 'member', 'fail')
-        // $login_flag = login($userID, $userPW);
-
-        // echo "login_flag : '{$login_flag}'";
     
     // Sign Up Button의 값이 할당되어 있다면,
     // 회원가입 시도로 판단

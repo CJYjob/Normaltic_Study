@@ -45,4 +45,6 @@ $row = mysqli_fetch_array($result);
 var_dump($row);
 echo '<br>'.$row['name'].'\'s score is '.$row['score']; 
 echo '<br>'.$row['name'].'\'s password is '.$row['pass'];
+
+mysqli_close($db_conn);
 ?>

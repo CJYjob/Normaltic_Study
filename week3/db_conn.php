@@ -5,7 +5,7 @@
 define('DB_SERVER', 'localhost'); 		// Server 주소
 define('DB_USERNAME', 'admin');			// 사용자 id
 define('DB_PASSWORD', 'student1234');	// 사용자 password
-define('DB_NAME', 'test');				// 사용할 DB table 이름
+define('DB_NAME', 'test');				// 사용할 DB 이름
 
 // DB Connector 생성
 	// Server가 DB와 통신하기 위한 interface 역할을 수행한다.
